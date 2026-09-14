@@ -1,0 +1,23 @@
+<Transactions>
+  <Transaction>
+    <Id>TXN007</Id>
+    <Date>2026-09-14T11:00:00</Date>
+    <Amount>700.00</Amount>
+    <Currency>USD</Currency>
+    <SenderAccount>ACC-4444</SenderAccount>
+  </Transaction>
+  <Transaction>
+    <Id>TXN008</Id>
+    <Date>2026-09-14T11:05:00</Date>
+    <Amount>-20.00</Amount>
+    <Currency>EUR</Currency>
+    <SenderAccount>ACC-5555</SenderAccount>
+  </Transaction>
+  <Transaction>
+    <Id>TXN009</Id>
+    <Date>2026-09-14T11:10:00</Date>
+    <Amount>120.00</Amount>
+    <Currency>UAH</Currency>
+    <SenderAccount>ACC-6666</SenderAccount>
+  </Transaction>
+</Transactions>

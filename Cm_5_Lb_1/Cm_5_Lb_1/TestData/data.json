@@ -1,0 +1,23 @@
+[
+  {
+    "Id": "TXN004",
+    "Date": "2026-09-14T10:00:00",
+    "Amount": 300.00,
+    "Currency": "USD",
+    "SenderAccount": "ACC-1111"
+  },
+  {
+    "Id": "TXN005",
+    "Date": "2026-09-14T10:05:00",
+    "Amount": -10.00,
+    "Currency": "EUR",
+    "SenderAccount": "ACC-2222"
+  },
+  {
+    "Id": "TXN006",
+    "Date": "2026-09-14T10:10:00",
+    "Amount": 450.00,
+    "Currency": "UAH",
+    "SenderAccount": "ACC-3333"
+  }
+]
