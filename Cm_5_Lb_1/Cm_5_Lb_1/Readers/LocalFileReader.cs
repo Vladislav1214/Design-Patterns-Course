@@ -9,15 +9,14 @@ namespace Cm_5_Lb_1.Readers
 {
     public class LocalFileReader : IDataReader
     {
+        public bool Exists(string source)
+        {
+            return File.Exists(source);
+        }
+
         public string Read(string source)
         {
-            if (File.Exists(source))
-            {
-                string content = File.ReadAllText(source);
-                return content;
-            }
-
-            throw new Exception($"{typeof(LocalFileReader)} Файл не знайдено: {source}");
+            return File.ReadAllText(source);
         }
     }
 }

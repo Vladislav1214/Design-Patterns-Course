@@ -18,6 +18,11 @@ namespace Cm_5_Lb_1.Core
         {
             try
             {
+                if (!_reader.Exists(filePath))
+                {
+                    throw new FileNotFoundException($"Джерело даних не знайдено: {filePath}");
+                }
+
                 _reporter.ReportProgress(10);
 
                 string content = _reader.Read(filePath);

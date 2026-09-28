@@ -6,6 +6,7 @@ using Cm_5_Lb_1.Parsers;
 using Cm_5_Lb_1.Reporting;
 using Cm_5_Lb_1.Validator;
 using Cm_5_Lb_1.Core;
+using System.Text;
 
 
 namespace Cm_5_Lb_1
@@ -14,6 +15,8 @@ namespace Cm_5_Lb_1
     {
         static void Main(string[] args)
         {
+            Console.OutputEncoding = Encoding.UTF8;
+
             var parsers = new Dictionary<string, ITransactionParser>
             {
                 { ".csv", new CsvTransactionParser() },
@@ -21,8 +24,10 @@ namespace Cm_5_Lb_1
                 { ".xml", new XmlTransactionParser() }
             };
 
+            var connectionString = "transactions.db";
+
             ITransactionValidator validator = new DefaultTransactionValidator();
-            ITransactionRepository repo = new SqliteTransactionRepository();
+            ITransactionRepository repo = new SqliteTransactionRepository(connectionString);
             IProgressReporter reporter = new ConsoleProgressReporter();
             IImportSummaryWriter summaryWriter = new FileSummaryWriter();
 
@@ -32,7 +37,7 @@ namespace Cm_5_Lb_1
             {
                 Console.WriteLine("\nВведіть шлях до файлу або URL (чи 'exit' для виходу):");
                 Console.Write("> ");
-                string source = Console.ReadLine()?.Trim();
+                string? source = Console.ReadLine()?.Trim();
 
                 if (string.IsNullOrEmpty(source)) continue;
                 if (source.ToLower() == "exit") break;
