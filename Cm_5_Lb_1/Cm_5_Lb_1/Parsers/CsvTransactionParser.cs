@@ -25,7 +25,6 @@ namespace Cm_5_Lb_1.Parsers
             {
                 string[] columns = lines[i].Split(',');
 
-                // Якщо рядок битий і в ньому менше 5 колонок - пропускаємо його
                 if (columns.Length < 5)
                 {
                     continue;
